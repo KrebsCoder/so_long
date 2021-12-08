@@ -1,0 +1,7 @@
+main.c
+.vscode
+*.o
+libftTester
+a.out
+libft-war-machine
+libft-unit-test
