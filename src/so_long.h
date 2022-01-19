@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 23:45:34 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/14 23:10:39 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/18 19:35:15 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,14 @@ typedef struct s_game
 	void *player_s;
 	void *player_d;
 	void *player_a;
-	char **map;
+	t_map data_map
 } t_game;
 
 typedef struct s_map
 {
+	char **map;
 	int collum;
-	int line;
+	int row;
 	int player_count;
 	int exit_count;
 	int collectables_count;
