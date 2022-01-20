@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 23:25:32 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/20 00:50:33 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/20 01:01:01 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,30 @@ int	validade_extension(char file)
 		return (0);
 }
 
-int	validade_content()
+int	validade_content(t_game *game)
+{
+	int row;
+	int column;
+
+	row = 0;
+	while(game->data_map.map[row])
+	{
+		column = 0;
+		while(game->data_map.map[row][column])
+		{
+			if (game->data_map.map[row][column] == 'C')
+				game->data_map.collectables_count++;
+			if (game->data_map.map[row][column] == 'E')
+				game->data_map.exit_count++;
+			if (game->data_map.map[row][column] == 'P')
+				game->data_map.player_count++;
+			column++;
+		}
+		row++;
+	}
+	if (game->data_map.collectables_count == 0 || 
+	game->data_map.exit_count != 1 || game->data_map.player_count != 1)
+		return (0);
+	else
+		return (1);
+}
