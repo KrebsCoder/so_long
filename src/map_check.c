@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 23:25:32 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/21 17:20:50 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/21 21:59:29 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int	map_check(t_game *game, char *file)
 {
 	t_map_initialize(game);
-	if (count_wall(game), validate_wall(game), validate_extension(file),
-		validate_content(game))
+	if (count_wall(game) && validate_wall(game) && validate_extension(file)
+		&& validate_content(game))
 		return (1);
 	else
 	{
@@ -32,16 +32,16 @@ int	count_wall(t_game *game)
 	int	j;
 
 	j = ft_strlen(game->data_map.map[0]);
-	row = 0;
-	while (game->data_map.map[row])
+	column = 0;
+	while (game->data_map.map[column])
 	{
-		column = 0;
-		while (game->data_map.map[row][column])
-			column++;
-		if (column != j)
+		row = 0;
+		while (game->data_map.map[column][row])
+			row++;
+		if (row != j)
 			return (0);
 		else
-			row++;
+			column++;
 	}
 	game->data_map.row = row;
 	game->data_map.collum = column;
@@ -55,36 +55,33 @@ int	validate_wall(t_game *game)
 	int	row_size;
 	int	column_size;
 
-	row_size = 0;
-	while (game->data_map.map[row_size])
-		row_size++;
-	column_size = ft_strlen(game->data_map.map[0]);
-	row = 0;
-	while (row < row_size)
+	column_size = 0;
+	while (game->data_map.map[column_size])
+		column_size++;
+	row_size = ft_strlen(game->data_map.map[0]);
+	column = 0;
+	while (column < column_size)
 	{
-		column = 0;
-		while (column < column_size)
+		row = 0;
+		while (row < row_size)
 		{
-			if (game->data_map.map[0][column] != '1' ||
-			game->data_map.map[row_size - 1][column] != '1' ||
-			game->data_map.map[row][0] != '1' ||
-			game->data_map.map[row][column_size - 1] != '1')
+			if (game->data_map.map[0][row] != '1' ||
+			game->data_map.map[column_size - 1][row] != '1' ||
+			game->data_map.map[column][0] != '1' ||
+			game->data_map.map[column][row_size - 1] != '1')
 				return (0);
-			column++;
+			row++;
 		}
-		row++;
+		column++;
 	}
 	return (1);
 }
 
 int	validate_extension(char *file)
 {
-	char	*str;
-
 	if (!file)
 		return (0);
-	str = ft_strchr(file, '.');
-	if (ft_strncmp(str, ".ber", 5))
+	if (ft_strnstr(file, ".ber", ft_strlen(file)))
 		return (1);
 	else
 	{
@@ -98,21 +95,21 @@ int	validate_content(t_game *game)
 	int	row;
 	int	column;
 
-	row = 0;
-	while (game->data_map.map[row])
+	column = 0;
+	while (game->data_map.map[column])
 	{
-		column = 0;
-		while (game->data_map.map[row][column])
+		row = 0;
+		while (game->data_map.map[column][row])
 		{
-			if (game->data_map.map[row][column] == 'C')
+			if (game->data_map.map[column][row] == 'C')
 				game->data_map.collectables_count++;
-			if (game->data_map.map[row][column] == 'E')
+			if (game->data_map.map[column][row] == 'E')
 				game->data_map.exit_count++;
-			if (game->data_map.map[row][column] == 'P')
+			if (game->data_map.map[column][row] == 'P')
 				game->data_map.player_count++;
-			column++;
+			row++;
 		}
-		row++;
+		column++;
 	}
 	if (game->data_map.collectables_count == 0
 		|| game->data_map.exit_count != 1 || game->data_map.player_count != 1)
