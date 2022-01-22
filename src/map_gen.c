@@ -6,13 +6,13 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 20:59:12 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/20 04:32:50 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/22 03:06:20 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-char	**map_gen(t_game game, char *file)
+char	**map_gen(char *file)
 {
 	char	**gen_map;
 	char	*buffer;
@@ -32,9 +32,10 @@ char	**map_gen(t_game game, char *file)
 		if (!buffer)
 			break ;
 		map = ft_strjoin(map, buffer);
+		free_ptr((void *)buffer);
 	}
 	gen_map = ft_split(map, '\n');
-	// *map and *buffer? needs to be freed?
+	free_ptr((void *)map);
 	close(fd);
-	return(gen_map);
+	return (gen_map);
 }
