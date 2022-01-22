@@ -6,16 +6,16 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:20:18 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/21 22:13:35 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/22 03:06:55 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void put_img_win(t_game *game)
+void	put_img_win(t_game *game)
 {
-	int row;
-	int column;
+	int	row;
+	int	column;
 
 	column = 0;
 	while (game->data_map.map[column])
@@ -39,7 +39,7 @@ void put_img_win(t_game *game)
 	}
 }
 
-void put_img(t_game *game, int row, int column, void *img)
+void	put_img(t_game *game, int row, int column, void *img)
 {	
 	mlx_put_image_to_window(game->mlx, game->win, img, \
 		column * SPRITE_SIZE, row * SPRITE_SIZE);

@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 23:25:32 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/21 21:59:29 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/21 22:17:05 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	count_wall(t_game *game)
 			column++;
 	}
 	game->data_map.row = row;
-	game->data_map.collum = column;
+	game->data_map.column = column;
 	return (1);
 }
 
