@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 18:27:27 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/22 03:05:54 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/25 01:42:40 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ void	win_init(t_game *game)
 	game->win = mlx_new_window(game->mlx, game->data_map.row * SPRITE_SIZE, \
 		game->data_map.column * SPRITE_SIZE, "win");
 	load_sprites(game);
-	put_img_win(game);
-	mlx_loop(game->mlx);
+	//put_img_win(game);
+	//mlx_loop(game->mlx);
 }

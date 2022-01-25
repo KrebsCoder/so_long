@@ -6,13 +6,13 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:20:18 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/22 03:06:55 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/25 01:20:16 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	put_img_win(t_game *game)
+int	put_img_win(t_game *game)
 {
 	int	row;
 	int	column;
@@ -37,6 +37,7 @@ void	put_img_win(t_game *game)
 		}
 		column++;
 	}
+	return (0);
 }
 
 void	put_img(t_game *game, int row, int column, void *img)

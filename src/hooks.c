@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/20 16:35:58 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2021/09/24 22:54:26 by lkrebs-l         ###   ########.fr       */
+/*   Created: 2022/01/22 00:13:15 by lkrebs-l          #+#    #+#             */
+/*   Updated: 2022/01/25 01:46:10 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "so_long.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t len)
+void	hooks_init(t_game *game)
 {
-	char	*dst;
-	char	*source;
-
-	if (!dest && !src)
-		return (NULL);
-	dst = (char *)dest;
-	source = (char *)src;
-	while (len--)
-	{
-		*dst++ = *source++;
-	}
-	return (dest);
+	mlx_hook(game->win, 02, 1L << 0, &key_press, game);
+	mlx_loop_hook(game->mlx, &put_img_win, game);
 }
+
+/* mlx_loop_hook is constantly putting the img in the window*/
+
+/* mlx_hook is waiting for a key press, if so, it sends to the key_press
+function the int of the key_press and...*/
