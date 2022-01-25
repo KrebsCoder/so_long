@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 22:04:01 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/21 22:55:27 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/25 20:56:06 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-#ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 128
-#endif
+# ifndef MAX_FDS
+#  define MAX_FDS 256
+# endif
 
-#ifndef MAX_FD 
-#  define MAX_FD 256
-#endif
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 128
+# endif
 
 //** libft functions
 
