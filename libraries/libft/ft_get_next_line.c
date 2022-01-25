@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*   ft_get_next_line.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 11:09:59 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/14 06:06:23 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/25 20:56:30 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,11 @@ char	*get_line(int fd, char **buffer, char *read_buffer)
 
 char	*ft_get_next_line(int fd)
 {
-	static char	*buffer[MAX_FD];
+	static char	*buffer[MAX_FDS];
 	char		*read_buffer;
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || fd > MAX_FD)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > MAX_FDS)
 		return (NULL);
 	if (!buffer[fd])
 		buffer[fd] = ft_strdup("");
