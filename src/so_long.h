@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 23:45:34 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/25 02:05:34 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/25 20:41:43 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # define PLAYER_S "sprites/Player_Down.xpm"
 # define PLAYER_A "sprites/Player_Left.xpm"
 # define PLAYER_W "sprites/Player_Up.xpm"
-# define PLAYER_D "sprites/Player_right.xpm"
+# define PLAYER_D "sprites/Player_Right.xpm"
 # define WALL "sprites/Wall.xpm"
 # define EXIT_CLOSED "sprites/Goal_Blocked.xpm"
 # define EXIT_OPEN "sprites/Goal_Open.xpm"
@@ -93,5 +93,7 @@ void	hooks_init(t_game *game);
 int		key_press(int key_code, t_game *game);
 int		validate_next_move(t_game *game, int row, int column, int key_code);
 int		move_player(t_game *game, int column, int row);
+void	end_game(t_game *game);
+void	free_map(t_game *game);
 
 #endif
