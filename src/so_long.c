@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 23:45:37 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/25 01:41:36 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/25 17:59:17 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,8 @@ int	main(int argc, char *argv[])
 	if (map_check(&game, argv[1]))
 	{
 		data_init(&game);
-		printf("data_init\n");
 		win_init(&game);
-		printf("win_init\n");
 		hooks_init(&game);
-		printf("hooks_init\n");
 		mlx_loop(game.mlx);
 	}
 	return (0);
