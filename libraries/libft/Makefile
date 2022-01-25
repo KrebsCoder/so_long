@@ -6,7 +6,7 @@
 #    By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/23 15:27:40 by lkrebs-l          #+#    #+#              #
-#    Updated: 2022/01/20 05:01:54 by lkrebs-l         ###   ########.fr        #
+#    Updated: 2022/01/26 00:29:59 by lkrebs-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ C_SOURCE = ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c ft_split.c \
 
 NAME = libft.a
 
-CFLAGS = -Wextra -Werror -Wall
+CFLAGS = -g3 -fsanitize=address -Wextra -Werror -Wall
 
 CC = gcc
 

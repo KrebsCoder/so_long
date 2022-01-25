@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 23:45:34 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/25 20:41:43 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/25 23:31:23 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@
 # define KEY_D 'd'
 # define KEY_A 'a'
 # define KEY_ESC 0xff1b
+# define X_CLICK_EXIT 17
+# define X_KEY_PRESS 2
 
 typedef struct s_map
 {
@@ -93,7 +95,7 @@ void	hooks_init(t_game *game);
 int		key_press(int key_code, t_game *game);
 int		validate_next_move(t_game *game, int row, int column, int key_code);
 int		move_player(t_game *game, int column, int row);
-void	end_game(t_game *game);
+int		end_game(t_game *game);
 void	free_map(t_game *game);
 
 #endif

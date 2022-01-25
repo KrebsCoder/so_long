@@ -1,7 +1,7 @@
 NAME = so_long
 CC = gcc
 LIBFT = ./libraries/libft
-CFLAGS = -g3 -Wall -Werror -Wextra
+CFLAGS = -fsanitize=address -Wall -Werror -Wextra
 SRC = 	src/data_init.c \
 		src/end_game.c \
 		src/hooks_init.c \
@@ -12,8 +12,9 @@ SRC = 	src/data_init.c \
 		src/move.c \
 		src/put_img_win.c \
 		src/so_long.c \
-		src/t_map_initialize.c
+		src/t_map_initialize.c \
 		src/win_init.c \
+
 FLAGS = -lmlx -lXext -lX11 
 OBJ = $(SRC:.c=.o)
 RM = rm -f
