@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 20:32:32 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/25 20:32:47 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/25 20:47:12 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,20 @@ void	free_ptr(void *ptr)
 	ptr = NULL;
 }
 
-void free_map(t_game *game)
+void	free_map(t_game *game)
 {
-	int column;
+	int	column;
 
 	column = 0;
-	while(game->data_map.map[column])
+	while (game->data_map.map[column])
 	{
 		free_ptr(game->data_map.map[column]);
 		column++;
 	}
+	free_ptr(game->data_map.map);
 }
 
-void exit_game(t_game *game)
+void	end_game(t_game *game)
 {
 	mlx_destroy_image(game->mlx, game->p_down);
 	mlx_destroy_image(game->mlx, game->p_up);
