@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 20:32:32 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/25 20:47:12 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/26 00:13:51 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	free_map(t_game *game)
 	free_ptr(game->data_map.map);
 }
 
-void	end_game(t_game *game)
+int	end_game(t_game *game)
 {
 	mlx_destroy_image(game->mlx, game->p_down);
 	mlx_destroy_image(game->mlx, game->p_up);
@@ -46,4 +46,5 @@ void	end_game(t_game *game)
 	mlx_destroy_display(game->mlx);
 	free_ptr(game->mlx);
 	free_map(game);
+	return (0);
 }
