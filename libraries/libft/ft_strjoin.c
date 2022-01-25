@@ -6,13 +6,13 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 14:25:09 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/21 22:55:32 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/25 22:04:45 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char const *s2)
 {
 	int		i;
 	int		j;
@@ -38,5 +38,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		j++;
 	}
 	ccat[i + j] = '\0';
+	free(s1);
 	return (ccat);
 }
