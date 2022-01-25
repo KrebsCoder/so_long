@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 22:04:01 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/25 20:56:06 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/25 22:04:37 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -206,7 +206,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
  * @param S2 suffix string
  * @return The new string. NULL if the allocation fails.
  */
-char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin(char *s1, char const *s2);
 
 /**
  * @brief Allocates and returns a copy of 's1' with 'set' trimmed (like hair).
