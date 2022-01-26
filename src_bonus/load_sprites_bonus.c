@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 17:59:07 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/26 01:51:58 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/26 13:47:22 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,7 @@ void	load_sprites(t_game *game)
 	game->cheese = mlx_xpm_file_to_image(game->mlx, CHEESE, \
 		&(game->win_width), &(game->win_height));
 	game->background = mlx_xpm_file_to_image(game->mlx, BACKGROUND, \
+		&(game->win_width), &(game->win_height));
+	game->enemy_down = mlx_xpm_file_to_image(game->mlx, ENEMY_DOWN, \
 		&(game->win_width), &(game->win_height));
 }
