@@ -1,7 +1,27 @@
 NAME = so_long
+
+NAME_BONUS = so_long_bonus
+
 CC = gcc
+
 LIBFT = ./libraries/libft
+
+SRC_BONUS = src_bonus/data_init_bonus.c \
+		src_bonus/end_game_bonus.c \
+		src_bonus/hooks_init_bonus.c \
+		src_bonus/key_pressed_bonus.c \
+		src_bonus/load_sprites_bonus.c \
+		src_bonus/map_check_bonus.c \
+		src_bonus/map_gen_bonus.c \
+		src_bonus/move_bonus.c \
+		src_bonus/put_img_win_bonus.c \
+		src_bonus/so_long_bonus.c \
+		src_bonus/t_map_initialize_bonus.c \
+		src_bonus/win_init_bonus.c \
+		src_bonus/merge_str_bonus.c
+
 CFLAGS = -g3 -Wall -Werror -Wextra
+
 SRC = 	src/data_init.c \
 		src/end_game.c \
 		src/hooks_init.c \
@@ -16,8 +36,12 @@ SRC = 	src/data_init.c \
 		src/win_init.c \
 		src/merge_str.c
 
-FLAGS = -lmlx -lXext -lX11 
+FLAGS = -lmlx -lXext -lX11
+
 OBJ = $(SRC:.c=.o)
+
+OBJ_BONUS = $(SRC_BONUS:.c=.o)
+
 RM = rm -f
 
 %.o: %.c
@@ -29,15 +53,30 @@ $(NAME): $(OBJ)
 	$(MAKE) -C $(LIBFT)
 	$(CC) $(CFLAGS) -I$(LIBFT) $(OBJ) -L$(LIBFT) -lft $(FLAGS) -o $(NAME)
 
+bonus: $(NAME_BONUS)
+
+$(NAME_BONUS): $(OBJ_BONUS)
+	$(MAKE) -C $(LIBFT)
+	$(CC) $(CFLAGS) -I$(LIBFT) $(OBJ_BONUS) -L$(LIBFT) -lft $(FLAGS) -o $(NAME_BONUS)
+
 clean: 
 	$(MAKE) -C $(LIBFT) clean
 	$(RM) $(OBJ)
-
 
 fclean: clean
 	$(MAKE) -C $(LIBFT) fclean
 	$(RM) $(NAME)
 
+clean_bonus:
+	$(MAKE) -C $(LIBFT) clean
+	$(RM) $(OBJ_BONUS) 
+
+fclean_bonus: clean_bonus
+	$(MAKE) -C $(LIBFT) fclean
+	$(RM) $(NAME_BONUS)
+
 re: fclean $(NAME)
 
-.PHONY: all clean fclean re
+re_bonus: fclean_bonus bonus
+
+.PHONY: all clean fclean clean_bonus fclean_bonus re re_bonus
