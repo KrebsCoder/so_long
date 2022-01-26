@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 23:45:34 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/26 01:53:53 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/26 13:37:35 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 # define PLAYER_W "sprites/Player_Up.xpm"
 # define PLAYER_D "sprites/Player_Right.xpm"
 # define WALL "sprites/Wall.xpm"
+# define ENEMY_DOWN "sprites/Enemy_down.xpm"
 # define EXIT_CLOSED "sprites/Goal_Blocked.xpm"
 # define EXIT_OPEN "sprites/Goal_Open.xpm"
 # define CHEESE "sprites/Collect.xpm"
@@ -61,6 +62,7 @@ typedef struct s_game
 	void	*exit_open;
 	void	*cheese;
 	void	*background;
+	void	*enemy_down;
 	void	*mlx;
 	void	*win;
 	int		win_height;
