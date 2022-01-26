@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 23:45:37 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/25 17:59:17 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/26 01:41:18 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int argc, char *argv[])
 	if (argc == 2)
 		game.data_map.map = map_gen(argv[1]);
 	else
-		write(1, "Error\n, map is missing", 23);
+		printf("Error\n map is missing");
 	if (map_check(&game, argv[1]))
 	{
 		data_init(&game);
