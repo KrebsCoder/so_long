@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 14:25:09 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/26 00:24:48 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/26 00:59:59 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strjoin(char *s1, char const *s2)
 
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
-	ccat = ft_calloc(len1 + len2 + 1, 1);
+	ccat = malloc(len1 + len2 + 1);
 	if (!ccat)
 		return (NULL);
 	i = 0;
@@ -37,6 +37,6 @@ char	*ft_strjoin(char *s1, char const *s2)
 		ccat[i + j] = s2[j];
 		j++;
 	}
-	free(s1);
+	ccat[i + j] = '\0';
 	return (ccat);
 }
