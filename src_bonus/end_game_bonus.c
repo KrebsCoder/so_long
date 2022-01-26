@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 20:32:32 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/26 01:51:46 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/26 19:46:34 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,10 @@ void	free_map(t_game *game)
 int	end_game(t_game *game)
 {
 	mlx_destroy_image(game->mlx, game->p_down);
-	mlx_destroy_image(game->mlx, game->p_up);
 	mlx_destroy_image(game->mlx, game->p_left);
+	mlx_destroy_image(game->mlx, game->p_up);
 	mlx_destroy_image(game->mlx, game->p_right);
+	mlx_destroy_image(game->mlx, game->enemy_down);
 	mlx_destroy_image(game->mlx, game->cheese);
 	mlx_destroy_image(game->mlx, game->wall);
 	mlx_destroy_image(game->mlx, game->background);

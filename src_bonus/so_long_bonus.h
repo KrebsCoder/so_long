@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 23:45:34 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/26 13:37:35 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/26 21:07:00 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 # define PLAYER_W "sprites/Player_Up.xpm"
 # define PLAYER_D "sprites/Player_Right.xpm"
 # define WALL "sprites/Wall.xpm"
-# define ENEMY_DOWN "sprites/Enemy_down.xpm"
+# define ENEMY_DOWN "sprites/Enemy_Down.xpm"
 # define EXIT_CLOSED "sprites/Goal_Blocked.xpm"
 # define EXIT_OPEN "sprites/Goal_Open.xpm"
 # define CHEESE "sprites/Collect.xpm"
@@ -57,12 +57,12 @@ typedef struct s_game
 	void	*p_left;
 	void	*p_up;
 	void	*p_right;
+	void	*enemy_down;
+	void	*cheese;
 	void	*wall;
+	void	*background;
 	void	*exit_closed;
 	void	*exit_open;
-	void	*cheese;
-	void	*background;
-	void	*enemy_down;
 	void	*mlx;
 	void	*win;
 	int		win_height;
@@ -73,6 +73,7 @@ typedef struct s_game
 	void	*player_a;
 	int		p_y;
 	int		p_x;
+	char	p_direction;
 	int		collected_cheese;
 	int		moves_count;
 	int		end_game;
@@ -90,8 +91,10 @@ void	t_map_initialize(t_game *game);
 void	data_init(t_game *game);
 void	win_init(t_game *game);
 void	load_sprites(t_game *game);
+void	load_sprites_player(t_game *game);
 void	put_img(t_game *game, int row, int column, void *img);
 int		put_img_win(t_game *game);
+int		put_img_win_bonus(t_game *game, int column, int row);
 void	free_ptr(void *ptr);
 void	hooks_init(t_game *game);
 int		key_press(int key_code, t_game *game);
@@ -100,5 +103,8 @@ int		move_player(t_game *game, int column, int row);
 int		end_game(t_game *game);
 void	free_map(t_game *game);
 char	*merge_str(char *s1, char const *s2);
+int		check_side(t_game *game, int key_code);
+void	handle_p_direction(t_game *game, int column, int row);
+int		check_next_line(char *map);
 
 #endif

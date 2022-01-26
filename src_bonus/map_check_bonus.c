@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 23:25:32 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/26 01:52:00 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/26 22:00:58 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,10 +84,7 @@ int	validate_extension(char *file)
 	if (ft_strnstr(file, ".ber", ft_strlen(file)))
 		return (1);
 	else
-	{
-		printf("invalid extension\n");
 		return (0);
-	}
 }
 
 int	validate_content(t_game *game)

@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 21:15:02 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/26 01:52:07 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/26 18:40:27 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ int	validate_next_move(t_game *game, int row, int column, int key_code)
 		game->end_game = 1;
 		return (0);
 	}
+	else if (game->data_map.map[column][row] == 'K')
+		end_game(game);
 	else if (game->data_map.map[column][row] == 'E')
 		return (0);
 	else

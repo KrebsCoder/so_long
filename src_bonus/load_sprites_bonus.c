@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 17:59:07 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/26 13:47:22 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/26 16:00:22 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,8 @@
 
 void	load_sprites(t_game *game)
 {
-	game->p_down = mlx_xpm_file_to_image(game->mlx, PLAYER_S, \
-		&(game->win_width), &(game->win_height));
-	game->p_left = mlx_xpm_file_to_image(game->mlx, PLAYER_A, \
-		&(game->win_width), &(game->win_height));
-	game->p_up = mlx_xpm_file_to_image(game->mlx, PLAYER_W, \
-		&(game->win_width), &(game->win_height));
-	game->p_right = mlx_xpm_file_to_image(game->mlx, PLAYER_D, \
+	load_sprites_player(game);
+	game->enemy_down = mlx_xpm_file_to_image(game->mlx, ENEMY_DOWN, \
 		&(game->win_width), &(game->win_height));
 	game->wall = mlx_xpm_file_to_image(game->mlx, WALL, \
 		&(game->win_width), &(game->win_height));
@@ -32,6 +27,16 @@ void	load_sprites(t_game *game)
 		&(game->win_width), &(game->win_height));
 	game->background = mlx_xpm_file_to_image(game->mlx, BACKGROUND, \
 		&(game->win_width), &(game->win_height));
-	game->enemy_down = mlx_xpm_file_to_image(game->mlx, ENEMY_DOWN, \
+}
+
+void	load_sprites_player(t_game *game)
+{
+	game->p_down = mlx_xpm_file_to_image(game->mlx, PLAYER_S, \
+		&(game->win_width), &(game->win_height));
+	game->p_left = mlx_xpm_file_to_image(game->mlx, PLAYER_A, \
+		&(game->win_width), &(game->win_height));
+	game->p_up = mlx_xpm_file_to_image(game->mlx, PLAYER_W, \
+		&(game->win_width), &(game->win_height));
+	game->p_right = mlx_xpm_file_to_image(game->mlx, PLAYER_D, \
 		&(game->win_width), &(game->win_height));
 }

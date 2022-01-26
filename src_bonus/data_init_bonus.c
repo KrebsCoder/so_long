@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:29:05 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/26 01:51:41 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/26 15:53:07 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,5 @@ void	data_init(t_game *game)
 	game->collected_cheese = 0;
 	game->moves_count = 0;
 	game->end_game = 0;
+	game->p_direction = 's';
 }
