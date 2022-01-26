@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 20:32:32 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/26 00:13:51 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/26 00:53:09 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ int	end_game(t_game *game)
 	mlx_destroy_display(game->mlx);
 	free_ptr(game->mlx);
 	free_map(game);
+	exit(0);
 	return (0);
 }

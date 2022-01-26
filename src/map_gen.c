@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 20:59:12 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/26 00:23:40 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/26 01:41:29 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	**map_gen(char *file)
 	fd = open(file, O_RDONLY);
 	if (fd < 1)
 	{
-		write(1, "Error\n, invalid fd, try again!", 31);
+		printf("Error\n invalid fd, try again!");
 		return (NULL);
 	}
 	map = ft_strdup("");
@@ -31,7 +31,7 @@ char	**map_gen(char *file)
 		buffer = ft_get_next_line(fd);
 		if (!buffer)
 			break ;
-		map = ft_strjoin(map, buffer);
+		map = merge_str(map, buffer);
 		free_ptr((void *)buffer);
 	}
 	gen_map = ft_split(map, '\n');

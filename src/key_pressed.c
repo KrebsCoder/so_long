@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 17:57:16 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/25 22:30:06 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/26 01:28:59 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,8 @@ int	key_press(int key_code, t_game *game)
 
 	row = game->p_x;
 	column = game->p_y;
-	printf("%d\n", key_code);
 	if (key_code == KEY_ESC)
-	{
-		printf("Congrats, you finished this game! Your moves:%d\n",
-			game->moves_count); // doesn't work
 		end_game(game);
-	}
 	else if (game->end_game)
 		return (0);
 	else if (key_code == 'w')
@@ -37,6 +32,9 @@ int	key_press(int key_code, t_game *game)
 	else if (key_code == 'd')
 		row++;
 	if (game->end_game == 0 && validate_next_move(game, row, column, key_code))
+	{
 		move_player(game, column, row);
+		printf("Your moves: %d\n", game->moves_count);
+	}
 	return (0);
 }
