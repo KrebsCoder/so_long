@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 20:59:12 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/27 18:49:15 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/27 19:46:45 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int	check_next_line(char *map)
 		if (map[i] == '\n' && map[i + 1] == '\n' && map[i + 2] == '1')
 		{
 			free_ptr(map);
+			printf("Error\nInvalid map\n");
 			return (1);
 		}
 		i++;
