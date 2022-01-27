@@ -6,22 +6,6 @@ CC = gcc
 
 LIBFT = ./libraries/libft
 
-SRC_BONUS = src_bonus/data_init_bonus.c \
-		src_bonus/end_game_bonus.c \
-		src_bonus/hooks_init_bonus.c \
-		src_bonus/key_pressed_bonus.c \
-		src_bonus/load_sprites_bonus.c \
-		src_bonus/map_check_bonus.c \
-		src_bonus/map_gen_bonus.c \
-		src_bonus/move_bonus.c \
-		src_bonus/put_img_win_bonus.c \
-		src_bonus/so_long_bonus.c \
-		src_bonus/t_map_initialize_bonus.c \
-		src_bonus/win_init_bonus.c \
-		src_bonus/merge_str_bonus.c
-
-CFLAGS = -g3 -Wall -Werror -Wextra
-
 SRC = 	src/data_init.c \
 		src/end_game.c \
 		src/hooks_init.c \
@@ -34,7 +18,25 @@ SRC = 	src/data_init.c \
 		src/so_long.c \
 		src/t_map_initialize.c \
 		src/win_init.c \
-		src/merge_str.c
+		src/utils.c
+
+
+SRC_BONUS = src_bonus/data_init_bonus.c \
+		src_bonus/end_game_bonus.c \
+		src_bonus/hooks_init_bonus.c \
+		src_bonus/key_pressed_bonus.c \
+		src_bonus/load_sprites_bonus.c \
+		src_bonus/map_check_bonus.c \
+		src_bonus/map_gen_bonus.c \
+		src_bonus/move_bonus.c \
+		src_bonus/put_img_win_bonus.c \
+		src_bonus/so_long_bonus.c \
+		src_bonus/t_map_initialize_bonus.c \
+		src_bonus/win_init_bonus.c \
+		src_bonus/utils_bonus.c
+
+CFLAGS = -g3 -Wall -Werror -Wextra
+
 
 FLAGS = -lmlx -lXext -lX11
 
