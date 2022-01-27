@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 23:25:32 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/27 17:41:28 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/27 19:36:52 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	map_check(t_game *game, char *file)
 			return (1);
 	}
 	printf("Error\nInvalid map.\n");
+	free_map(game);
 	return (0);
 }
 
@@ -94,29 +95,17 @@ int	validate_content(t_game *game)
 	int	row;
 	int	column;
 
-	column = -1;
-	while (game->data_map.map[++column])
+	column = 0;
+	while (game->data_map.map[column])
 	{
-		row = -1;
-		while (game->data_map.map[column][++row])
+		row = 0;
+		while (game->data_map.map[column][row])
 		{
-			if (game->data_map.map[column][row] == 'C')
-				game->data_map.collectables_count++;
-			else if (game->data_map.map[column][row] == 'E')
-				game->data_map.exit_count++;
-			else if (game->data_map.map[column][row] == 'P')
-			{
-				game->data_map.player_count++;
-				game->p_x = row;
-				game->p_y = column;
-			}
-			else if (game->data_map.map[column][row] == '1'
-				|| game->data_map.map[column][row] == '0'
-				|| game->data_map.map[column][row] == '\n')
-				continue ;
-			else
+			if (!content_cases(game, column, row))
 				return (0);
+			row++;
 		}
+		column++;
 	}
 	return (1);
 }
