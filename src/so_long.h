@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 23:45:34 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/26 13:05:01 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/26 23:47:12 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,6 @@ int		move_player(t_game *game, int column, int row);
 int		end_game(t_game *game);
 void	free_map(t_game *game);
 char	*merge_str(char *s1, char const *s2);
+int		check_next_line(char *map);
 
 #endif
