@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 23:45:37 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/01/27 17:53:48 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/01/27 18:46:48 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int argc, char *argv[])
 		if (!game.data_map.map)
 		{
 			printf("Error\nInvalid map\n");
-			return (0);
+			return (1);
 		}
 	}
 	else
