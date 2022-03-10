@@ -52,6 +52,7 @@ make bonus
 ./so_long_bonus maps/map_bonus.ber
 ```
 
+--- 
 <div>
 	<img src="gif/so_long.gif", alt="so_long gif">
 </div>
